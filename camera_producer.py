@@ -1,10 +1,14 @@
 import csv
+import threading
+from time import sleep
+
 from kafka import KafkaProducer
 
 
-class CameraProducer:
+class CameraProducer(threading.Thread):
 
     def __init__(self):
+        super(CameraProducer, self).__init__()
         self.producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
 
     def start_streaming(self):
@@ -16,4 +20,7 @@ class CameraProducer:
                 string = ';'.join(row) + "\n"
                 self.producer.send('test', value=string.encode())
                 print("sent")
-                # sleep(1)
+                sleep(0.1)
+
+    def run(self):
+        self.start_streaming()

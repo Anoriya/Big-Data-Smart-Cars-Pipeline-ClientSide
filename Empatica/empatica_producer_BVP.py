@@ -1,12 +1,14 @@
 import csv
+import threading
 from time import sleep
 #from kafka import KafkaProducer
 from kafka import KafkaProducer
 
 
-class EmpaticaProducerBVP:
+class EmpaticaProducerBVP(threading.Thread):
 
     def __init__(self):
+        super(EmpaticaProducerBVP, self).__init__()
         self.producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
 
     def start_streaming(self):
@@ -16,6 +18,9 @@ class EmpaticaProducerBVP:
             next(reader)
             for row in reader:
                 string = ';'.join(row) + "\n"
-                self.producer.send('test', value=string.encode())
+                self.producer.send('test', value=string.encode(), key="BVP".encode())
                 print("sent")
-                # sleep(1)
+                sleep(0.1)
+
+    def run(self):
+        self.start_streaming()

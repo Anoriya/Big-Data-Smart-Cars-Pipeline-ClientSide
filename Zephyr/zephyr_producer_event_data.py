@@ -1,5 +1,6 @@
 import csv
 import threading
+from time import sleep
 
 from kafka import KafkaProducer
 
@@ -19,7 +20,7 @@ class ZephyrProducerEventData(threading.Thread):
                 string = ';'.join(row) + "\n"
                 self.producer.send('Zephyr', value=string.encode(), key="Event_Data".encode())
                 print("sent")
-                # sleep(1)
+                sleep(0.1)
 
     def run(self):
         self.start_streaming()
