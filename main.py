@@ -1,3 +1,5 @@
+from AirQuality.GazMassConcentration import GazMassConcentration
+from AirQuality.GazQuantity import GazQuantity
 from Aw.aw_producer import AwProducer
 from Empatica.empatica_producer_ACC import EmpaticaProducerACC
 from Empatica.empatica_producer_BVP import EmpaticaProducerBVP
@@ -12,12 +14,16 @@ from Zephyr.zephyr_producer_ecg import ZephyProducerECG
 from Zephyr.zephyr_producer_event_data import ZephyrProducerEventData
 from camera_producer import CameraProducer
 
+#Camera
 cameraProducer = CameraProducer()
+#Aw
 awProducer = AwProducer()
+#Zephyr
 zephyrProducerBr = ZephyrProducerBR()
 zephyrProducerGeneral = ZephyrProducerGeneral()
 zephyrProducerECG = ZephyProducerECG()
 zephyrProducerEventData = ZephyrProducerEventData()
+#Empatica
 empaticaProducerACC = EmpaticaProducerACC()
 empaticaProducerBVP = EmpaticaProducerBVP()
 empaticaProducerEDA = EmpaticaProducerEDA()
@@ -25,18 +31,25 @@ empaticaProducerHR = EmpaticaProducerHR()
 empaticaProducerIBI = EmpaticaProducerIBI()
 empaticaProducerTAGS = EmpaticaProducerTAGS()
 empaticaProducerTEMP = EmpaticaProducerTEMP()
+#AirQuality
+gazQuantity = GazQuantity()
+gazMassConentration = GazMassConcentration()
 
-awProducer.start()
-zephyrProducerBr.start()
-zephyrProducerGeneral.start()
-zephyrProducerECG.start()
-zephyrProducerEventData.start()
-empaticaProducerACC.start()
-empaticaProducerBVP.start()
-empaticaProducerEDA.start()
-empaticaProducerHR.start()
-empaticaProducerIBI.start()
-empaticaProducerTAGS.start()
-empaticaProducerTEMP.start()
-cameraProducer.start()
+
+# awProducer.start()
+# zephyrProducerBr.start()
+# zephyrProducerGeneral.start()
+# zephyrProducerECG.start()
+# zephyrProducerEventData.start()
+# cameraProducer.start()
+# empaticaProducerACC.start()
+# empaticaProducerBVP.start()
+# empaticaProducerEDA.start()
+# empaticaProducerHR.start()
+# empaticaProducerIBI.start()
+# empaticaProducerTEMP.start()
+# empaticaProducerTAGS.start()
+#Airquality
+gazQuantity.start()
+gazMassConentration.start()
 
