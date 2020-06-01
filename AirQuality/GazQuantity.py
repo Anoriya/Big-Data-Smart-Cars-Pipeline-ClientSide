@@ -9,7 +9,7 @@ class GazQuantity(threading.Thread):
 
     def __init__(self):
         super(GazQuantity, self).__init__()
-        # self.producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
+        self.producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
 
     def start_streaming(self):
         with open("/home/sartharion/Bureau/5-mcluet/AIRQUALITY/2020-02-07_13-26-04-SGP30_8373181.csv",
