@@ -18,7 +18,7 @@ class GazQuantity(threading.Thread):
             next(reader)
             for row in reader:
                 string = ';'.join(row) + "\n"
-                self.producer.send('AirQuality', value=string.encode(), key="quantity".encode(), partition=0)
+                self.producer.send('AirQuality', value=string.encode(), key="Quantity".encode(), partition=0)
                 print("sent Gaz Quantity")
                 sleep(1)
 

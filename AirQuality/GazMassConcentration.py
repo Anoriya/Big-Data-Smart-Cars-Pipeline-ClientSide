@@ -18,7 +18,7 @@ class GazMassConcentration(threading.Thread):
             next(reader)
             for row in reader:
                 string = ';'.join(row) + "\n"
-                self.producer.send('AirQuality', value=string.encode(), key="concentration".encode(), partition=1)
+                self.producer.send('AirQuality', value=string.encode(), key="Concentration".encode(), partition=1)
                 print("sent Gaz mass concentration")
                 sleep(1)
 
