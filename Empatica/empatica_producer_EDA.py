@@ -12,15 +12,15 @@ class EmpaticaProducerEDA(threading.Thread):
         self.producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
 
     def start_streaming(self):
-        with open("/home/rached/Bureau/data/5-mcluet/EMPATICA/EDA.csv",
+        with open("/home/sartharion/Bureau/5-mcluet/EMPATICA/EDA.csv",
                   newline='') as f:
             reader = csv.reader(f)
             next(reader)
             for row in reader:
                 string = ';'.join(row) + "\n"
-                self.producer.send('test', value=string.encode(), key="EDA".encode())
-                print("sent")
-                sleep(0.1)
+                self.producer.send('Empatica', value=string.encode(), key="EDA".encode(),partition=2)
+                print("sent EDA")
+                sleep(1)
 
     def run(self):
         self.start_streaming()

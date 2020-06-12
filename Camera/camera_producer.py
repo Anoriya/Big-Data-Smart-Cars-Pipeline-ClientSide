@@ -18,9 +18,9 @@ class CameraProducer(threading.Thread):
             next(reader)
             for row in reader:
                 string = ';'.join(row) + "\n"
-                self.producer.send('test', value=string.encode())
-                print("sent")
-                sleep(0.1)
+                self.producer.send('Camera', value=string.encode(), key="camera".encode())
+                print("sent CAMERA")
+                sleep(0.2)
 
     def run(self):
         self.start_streaming()

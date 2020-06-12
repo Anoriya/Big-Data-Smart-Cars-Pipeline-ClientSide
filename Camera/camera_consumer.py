@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from kafka import KafkaConsumer, TopicPartition
+from kafka import KafkaConsumer
 
 
 def on_assign(c, ps):
@@ -13,9 +13,9 @@ consumer = KafkaConsumer(
     bootstrap_servers=['localhost:9092'],
     auto_offset_reset='earliest',
     enable_auto_commit=False,
-    group_id="grp")
+    group_id="test")
 
-consumer.subscribe(["camera"])
+consumer.subscribe(["Empatica"])
 
 for msg in consumer:
     print(msg, 'utf-8', 'ignore')

@@ -12,15 +12,16 @@ class EmpaticaProducerBVP(threading.Thread):
         self.producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
 
     def start_streaming(self):
-        with open("/home/rached/Bureau/data/5-mcluet/EMPATICA/BVP.csv",
+        with open("/home/sartharion/Bureau/5-mcluet/EMPATICA/BVP.csv",
                   newline='') as f:
             reader = csv.reader(f)
             next(reader)
+            next(reader)
             for row in reader:
                 string = ';'.join(row) + "\n"
-                self.producer.send('test', value=string.encode(), key="BVP".encode())
-                print("sent")
-                sleep(0.1)
+                self.producer.send('Empatica', value=string.encode(), key="BVP".encode(),partition=1)
+                print("sent BVP")
+                sleep(1)
 
     def run(self):
         self.start_streaming()

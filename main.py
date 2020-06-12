@@ -12,7 +12,7 @@ from Zephyr.zephy_producer_br_rr import ZephyrProducerBR
 from Zephyr.zephy_producer_general import ZephyrProducerGeneral
 from Zephyr.zephyr_producer_ecg import ZephyProducerECG
 from Zephyr.zephyr_producer_event_data import ZephyrProducerEventData
-from camera_producer import CameraProducer
+from Camera.camera_producer import CameraProducer
 
 #Camera
 cameraProducer = CameraProducer()
@@ -36,20 +36,20 @@ gazQuantity = GazQuantity()
 gazMassConentration = GazMassConcentration()
 
 
-# awProducer.start()
-# zephyrProducerBr.start()
-# zephyrProducerGeneral.start()
-# zephyrProducerECG.start()
-# zephyrProducerEventData.start()
-# cameraProducer.start()
-# empaticaProducerACC.start()
-# empaticaProducerBVP.start()
-# empaticaProducerEDA.start()
-# empaticaProducerHR.start()
-# empaticaProducerIBI.start()
-# empaticaProducerTEMP.start()
+awProducer.start()
+zephyrProducerBr.start()
+zephyrProducerGeneral.start()
+zephyrProducerECG.start()
+zephyrProducerEventData.start()
+cameraProducer.start()
+empaticaProducerACC.start()
+empaticaProducerBVP.start()
+empaticaProducerEDA.start()
+empaticaProducerHR.start()
+empaticaProducerIBI.start()
+empaticaProducerTEMP.start()
 # empaticaProducerTAGS.start()
-#Airquality
+# Airquality
 gazQuantity.start()
 gazMassConentration.start()
 
