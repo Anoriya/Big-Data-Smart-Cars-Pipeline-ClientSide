@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>386</width>
-    <height>330</height>
+    <width>527</width>
+    <height>370</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>10</x>
       <y>10</y>
       <width>231</width>
       <height>61</height>
@@ -30,8 +30,8 @@
    <widget class="QTextEdit" name="textEdit_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>140</y>
+      <x>270</x>
+      <y>160</y>
       <width>231</width>
       <height>131</height>
      </rect>
@@ -40,14 +40,50 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>110</y>
+      <x>280</x>
+      <y>130</y>
       <width>111</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
-     <string>Dashboard</string>
+     <string>Result</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>STOP CAR</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>231</width>
+      <height>131</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Data sent</string>
     </property>
    </widget>
   </widget>
@@ -56,7 +92,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>386</width>
+     <width>527</width>
      <height>22</height>
     </rect>
    </property>
